@@ -1,0 +1,22 @@
+
+<div *ngIf="message" class="alert alert-success">
+    {{ message }}
+  </div>
+  <div class="d-flex justify-content-center">
+<form  (ngSubmit)="onSubmit()" class="row g-3" style="width: 60%;">
+  <div class="col-6">
+    <label for="first_name" class="form-label">First Name</label>
+    <input type="text" class="form-control"  name="first_name" [(ngModel)]="emp.first_name">
+  </div>
+  <div class="col-6">
+    <label for="last_name" class="form-label">Last Name</label>
+    <input type="text" class="form-control"  name="last_name" [(ngModel)]="emp.last_name">
+  </div>
+  <div class="col-12">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control"  name="email" [(ngModel)]="emp.email">
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-success">Update</button>
+  </div>
+</form>

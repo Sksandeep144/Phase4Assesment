@@ -1,0 +1,39 @@
+<div *ngIf="message" class="alert alert-success">
+  {{ message }}
+</div>
+<div *ngIf="emp">
+  <table class="table">
+    <thead>
+      <tr class="border-bottom">
+        <th class="border-top-0">Employee Details of {{ emp.first_name }} {{ emp.last_name }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Employee Id:</td>
+        <td>{{ emp.id }}</td>
+      </tr>
+      <tr>
+        <td>First Name:</td>
+        <td>{{ emp.first_name }}</td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td>{{ emp.last_name }}</td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>{{ emp.email }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr class="border-top">
+        <td colspan="2">
+          <button routerLink="/employees" class="btn btn-info">Back to Employees</button> &nbsp;&nbsp;
+          <button [routerLink]="['/edit', emp.id]" class="btn btn-primary">Edit</button> &nbsp;&nbsp;
+          <button (click)="deleteEmployee(emp.id)" class="btn btn-danger">Delete</button> &nbsp;&nbsp;
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
